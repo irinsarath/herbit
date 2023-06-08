@@ -234,7 +234,7 @@ class _User_signupState extends State<User_signup> {
                     ),
                     onPressed: () {
                       AuthenticationHelper()
-                          .Signupad(email: _emailcontroller.text, password:_passwordcontroller.text)
+                          .signUp(email: _emailcontroller.text, password:_passwordcontroller.text,name:_fullnamecontroller.text,age:_agecontroller.text,phone: _phonecontroller.text)
                           .then((result) {
                         if (result == null) {
                           Navigator.pushReplacement(context,

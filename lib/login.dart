@@ -339,10 +339,19 @@ class _LoginState extends State<Login> {
                                             color: Colors.white, fontSize: 25),
                                       ),
                                       onPressed: () {
-                                        loginWithEmailAndPassword(
-                                            _emailcontroller.text,
-                                            _passwordcontroller.text);
-
+                                        if ( _emailcontroller.text == 'admin@gmail.com') {
+                                          Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => home_admin(),
+                                            ),
+                                          );
+                                        }
+                                        else {
+                                          loginWithEmailAndPassword(
+                                              _emailcontroller.text,
+                                              _passwordcontroller.text);
+                                        }
                                         /*AuthenticationHelper()
                                             .signIn(email: _emailcontroller.text, password: _passwordcontroller.text)
                                             .then((result) {
